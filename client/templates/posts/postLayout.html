@@ -1,0 +1,12 @@
+<template name = "postLayout">
+<div class="container">
+	<div class="jumbotron text-center">
+		<h1>{{Name}}</h1>
+		<a class="btn btn-primary" href={{pathFor 'editPost'}}>Edit</a>
+		<p>
+			{{Age}}
+		</p>
+	</div>
+	  {{> commentslist}}
+</div>
+</template>

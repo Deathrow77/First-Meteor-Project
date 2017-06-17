@@ -1,0 +1,51 @@
+<head>
+  <title>meteorapp</title>
+</head>
+
+
+
+<!-- Template for posts list -->
+
+
+<template name = "postsList">
+{{commentcount}}
+	{{#each lists}}
+  <div class="container">
+  	<div class="panel panel-info">
+  		<div class="panel-heading text-success"><h1><a href ="{{pathFor 'postLayout'}}">{{Name}}</a></h1></div>
+  		<div class="panel-body">
+  		<p>{{Age}}</p>
+  		</div>
+  	</div>
+  </div>
+	{{/each}}
+
+</template>
+
+
+<!-- Template for comment list -->
+
+
+<template name="commentslist">
+<form>
+      <fieldset class="form-group">
+        <h4 class="text-primary">Add Comment</h4>
+      </fieldset>
+      <fieldset class="form-group">
+        <textarea name="commentbody" placeholder="Enter you comment here" ></textarea>
+      </fieldset>
+      <fieldset class="form-group">
+        <input type="submit" class="btn btn-success" id = "Submit" value="Submit">
+      </fieldset>
+</form>
+<ul class="list-group">
+  {{#each comment}}
+    <div class="panel panel-info">
+      <div class="panel-heading text-success"><h1><a href ="{{pathFor 'postLayout'}}">{{author}} on {{submitted}}</a></h1></div>
+      <div class="panel-body">
+      <p>{{body}}</p>
+      </div>
+    </div>
+  {{/each}}
+  </ul>
+</template>
